@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Snake : MonoBehaviour
 {
+    GameObject przycisk;
     public Button rozpoczecie;
     private Rigidbody2D rb;
-    float currentspeed = 100f;
-    bool kobra = true;
+    float currentspeed = 2f;
+    bool kobra = false;
     GameObject poczatek;
     private GameObject snake;
     private void Start()
@@ -15,22 +16,29 @@ public class Snake : MonoBehaviour
         Button btn = rozpoczecie.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
         rb = transform.GetComponent<Rigidbody2D>();
-        gameObject.GetComponent<Button>().onClick.AddListener(TaskOnClick);
+        przycisk = GameObject.Find("Button");
     }
 
     private void TaskOnClick()
     {
-        bool kobra = false;
+        kobra = true;
+        Destroy(przycisk);
+    }    
+
+    void FixedUpdate()
+    {
         if (kobra == true)
         {
-            float movementHorizontal = Input.GetAxis("Horizontal");
-            Vector3 movement = new Vector3(movementHorizontal, 0f, 0f);
-            rb.AddForce(movement * currentspeed);
+            Vector3 movement = new Vector3(1f, 0f, 0f);
+            rb.AddForce(transform.up * currentspeed);
         }
-        
-    }    
-    void OnButtonClick()
-    {
-        //bool kobra = false;
     }
+    void skrecanie()
+    {
+
+    }
+
+
+
+
 }
