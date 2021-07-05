@@ -30,12 +30,20 @@ public class Snake : MonoBehaviour
             transform.Translate(transform.up * currentspeed/100);
         }
     }
-    public void skrecanie()
+    public void skrecanie_prawo()
     {
         transform.Rotate(Vector3.forward * 90);
     }
-
-
-
-
+    public void skrecanie_lewo()
+    {
+        transform.Rotate(Vector3.forward * -90);
+    }
+    public void skrecanie_gora()
+    {
+        transform.Rotate(Vector3.forward * 90);
+    }
+    public void skrecanie_dol()
+    {
+        transform.Rotate(Vector3.forward * 90);
+    }
 }
