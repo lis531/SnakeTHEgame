@@ -6,8 +6,7 @@ public class Snake : MonoBehaviour
 {
     GameObject przycisk;
     public Button rozpoczecie;
-    private Rigidbody2D rb;
-    float currentspeed = 2f;
+    float currentspeed = 3f;
     bool kobra = false;
     GameObject poczatek;
     private GameObject snake;
@@ -15,7 +14,6 @@ public class Snake : MonoBehaviour
     {
         Button btn = rozpoczecie.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
-        rb = transform.GetComponent<Rigidbody2D>();
         przycisk = GameObject.Find("Button");
     }
 
@@ -29,13 +27,12 @@ public class Snake : MonoBehaviour
     {
         if (kobra == true)
         {
-            Vector3 movement = new Vector3(1f, 0f, 0f);
-            rb.AddForce(transform.up * currentspeed);
+            transform.Translate(transform.up * currentspeed/100);
         }
     }
-    void skrecanie()
+    public void skrecanie()
     {
-
+        transform.Rotate(Vector3.forward * 90);
     }
 
 
