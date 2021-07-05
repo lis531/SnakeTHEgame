@@ -503,6 +503,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 819700262}
+        m_TargetAssemblyTypeName: skrecanie, Assembly-CSharp
+        m_MethodName: TaskOnClickUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &237821446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,6 +930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 819700264}
   - component: {fileID: 819700263}
+  - component: {fileID: 819700262}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -925,6 +938,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &819700262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819700261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc8f76b1760ec649a92ed3360b7ade7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &819700263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,6 +1304,18 @@ MonoBehaviour:
       - m_Target: {fileID: 819700263}
         m_TargetAssemblyTypeName: Snake, Assembly-CSharp
         m_MethodName: skrecanie_prawo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 819700262}
+        m_TargetAssemblyTypeName: skrecanie, Assembly-CSharp
+        m_MethodName: TaskOnClickRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1845,6 +1882,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 819700262}
+        m_TargetAssemblyTypeName: skrecanie, Assembly-CSharp
+        m_MethodName: TaskOnClickLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1801266338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,6 +2084,18 @@ MonoBehaviour:
       - m_Target: {fileID: 819700263}
         m_TargetAssemblyTypeName: Snake, Assembly-CSharp
         m_MethodName: skrecanie_dol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 819700262}
+        m_TargetAssemblyTypeName: skrecanie, Assembly-CSharp
+        m_MethodName: TaskOnClickDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

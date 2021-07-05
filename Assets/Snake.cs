@@ -12,9 +12,12 @@ public class Snake : MonoBehaviour
     private GameObject snake;
     private void Start()
     {
+        
+        leftbuton.SetActive(true);
+        rigtbuton.SetActive(true);
         Button btn = rozpoczecie.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
-        przycisk = GameObject.Find("Button");
+        przycisk = GameObject.Find("Button left");
     }
 
     private void TaskOnClick()
@@ -27,23 +30,8 @@ public class Snake : MonoBehaviour
     {
         if (kobra == true)
         {
-            transform.Translate(transform.up * currentspeed/100);
+            transform.Translate(transform.forward * currentspeed/100);
         }
     }
-    public void skrecanie_prawo()
-    {
-        transform.Rotate(Vector3.forward * 90);
-    }
-    public void skrecanie_lewo()
-    {
-        transform.Rotate(Vector3.forward * -90);
-    }
-    public void skrecanie_gora()
-    {
-        transform.Rotate(Vector3.forward * 90);
-    }
-    public void skrecanie_dol()
-    {
-        transform.Rotate(Vector3.forward * 90);
-    }
+
 }
