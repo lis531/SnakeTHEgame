@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Snake : MonoBehaviour
 {
+    GameObject rigtbuton;
+    GameObject leftbuton;
     GameObject przycisk;
     public Button rozpoczecie;
     float currentspeed = 3f;
@@ -12,18 +14,24 @@ public class Snake : MonoBehaviour
     private GameObject snake;
     private void Start()
     {
-        
-        leftbuton.SetActive(true);
-        rigtbuton.SetActive(true);
+        rigtbuton = GameObject.Find("Button right");
+        leftbuton = GameObject.Find("Button left");
         Button btn = rozpoczecie.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
-        przycisk = GameObject.Find("Button left");
+        przycisk = GameObject.Find("Button");
     }
 
+    float dom;
     private void TaskOnClick()
     {
         kobra = true;
         Destroy(przycisk);
+        rigtbuton.SetActive(true);
+        leftbuton.SetActive(true);
+        //dom = Random.Range(1, 6); dla lisusa
+        //Console.WriteLine(dom);
+
+
     }    
 
     void FixedUpdate()

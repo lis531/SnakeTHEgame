@@ -8,6 +8,7 @@ public class skrecanie : MonoBehaviour
     GameObject dawnbuton;
     GameObject rigtbuton;
     GameObject leftbuton;
+    private Vector2 _direction = Vector2.right;
     void Awake()
     {
         apbuton = GameObject.Find("Button up");
@@ -16,8 +17,7 @@ public class skrecanie : MonoBehaviour
         leftbuton = GameObject.Find("Button left");
         apbuton.SetActive(false);
         dawnbuton.SetActive(false);
-        leftbuton.SetActive(false);
-        rigtbuton.SetActive(false);
+
 
     }
     public void TaskOnClickLeft()
@@ -26,7 +26,7 @@ public class skrecanie : MonoBehaviour
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
         dawnbuton.SetActive(true);
-        transform.Rotate(Vector3.left * 90);
+        _direction = Vector2.left;
     }
     public void TaskOnClickRight()
     {
@@ -34,6 +34,7 @@ public class skrecanie : MonoBehaviour
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
         dawnbuton.SetActive(true);
+        _direction = Vector2.right;
     }
     public void TaskOnClickUp()
     {
@@ -41,6 +42,7 @@ public class skrecanie : MonoBehaviour
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
+        _direction = Vector2.up;
     }
     public void TaskOnClickDown()
     {
@@ -48,5 +50,13 @@ public class skrecanie : MonoBehaviour
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
+        _direction = Vector2.down;
     }
+    //private void FixedUpdate()
+    //{
+       // this.transform.position = new Vector3(
+           // Mathf.Round(this.transform.position.x) + _direction.x,
+           // Mathf.Round(this.transform.position.y) + _direction.y,
+          //  0.0f);
+   // }
 }
