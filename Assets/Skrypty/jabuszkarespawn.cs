@@ -1,12 +1,23 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class jabuszkarespawn : MonoBehaviour
 {
     public BoxCollider2D pole;
+    public Button rozpoczecie;
+    GameObject poczatek;
+    GameObject przycisk;
 
     private void Start()
     {
-        RandomizePosition();
+        Button btn = rozpoczecie.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
+        przycisk = GameObject.Find("Button");
+    }
+
+    private void TaskOnClick()
+    {
+    RandomizePosition();
     }
 
     private void RandomizePosition()
@@ -21,8 +32,9 @@ public class jabuszkarespawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Gracz") {
-        RandomizePosition();
+        if (other.tag == "Gracz")
+        {
+            RandomizePosition();
         }
     }
 }

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Snake : MonoBehaviour
 {
     GameObject rigtbuton;
@@ -20,7 +19,6 @@ public class Snake : MonoBehaviour
         btn.onClick.AddListener(TaskOnClick);
         przycisk = GameObject.Find("Button");
     }
-
     float dom;
     private void TaskOnClick()
     {
@@ -28,18 +26,13 @@ public class Snake : MonoBehaviour
         Destroy(przycisk);
         rigtbuton.SetActive(true);
         leftbuton.SetActive(true);
-        //dom = Random.Range(1, 6); dla lisusa
-        //Console.WriteLine(dom);
-
-
-    }    
+    }
 
     void FixedUpdate()
     {
         if (kobra == true)
         {
-            transform.Translate(transform.forward * currentspeed/100);
+            transform.Translate(transform.up * currentspeed / 100);
         }
     }
-
 }
