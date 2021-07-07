@@ -9,7 +9,6 @@ public class skrecanie : MonoBehaviour
     GameObject rigtbuton;
     GameObject leftbuton;
     GameObject Snake;
-    private Vector2 _direction = Vector2.right;
     void Awake()
     {
         Snake = gameObject;
@@ -17,26 +16,25 @@ public class skrecanie : MonoBehaviour
         dawnbuton = GameObject.Find("Button down");
         rigtbuton = GameObject.Find("Button right");
         leftbuton = GameObject.Find("Button left");
+
         apbuton.SetActive(false);
         dawnbuton.SetActive(false);
     }
     public void TaskOnClickLeft()
-    {
-        Snake.transform.rotation = Quaternion.Euler(0, 0, -90);
-        leftbuton.SetActive(false);
-        rigtbuton.SetActive(false);
-        apbuton.SetActive(true);
-        dawnbuton.SetActive(true);
-        Snake.GetComponent<Snake>()._direction = Vector2.left;
-    }
-    public void TaskOnClickRight()
     {
         Snake.transform.rotation = Quaternion.Euler(0, 0, 90);
         leftbuton.SetActive(false);
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
         dawnbuton.SetActive(true);
-        Snake.GetComponent<Snake>()._direction = Vector2.right;
+    }
+    public void TaskOnClickRight()
+    {
+        Snake.transform.rotation = Quaternion.Euler(0, 0, -90);
+        leftbuton.SetActive(false);
+        rigtbuton.SetActive(false);
+        apbuton.SetActive(true);
+        dawnbuton.SetActive(true);
     }
     public void TaskOnClickUp()
     {
@@ -45,7 +43,6 @@ public class skrecanie : MonoBehaviour
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
-        Snake.GetComponent<Snake>()._direction = Vector2.up;
     }
     public void TaskOnClickDown()
     {
@@ -54,6 +51,5 @@ public class skrecanie : MonoBehaviour
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
-        Snake.GetComponent<Snake>()._direction = Vector2.down;
     }
 }
