@@ -12,7 +12,7 @@ public class Snake : MonoBehaviour
     GameObject napisy3;
 
     public Button rozpoczecie;
-    float currentspeed = 2f;
+    float currentspeed = 5f;
     bool kobra = false;
     GameObject poczatek;
     private GameObject snake;
@@ -44,6 +44,7 @@ public class Snake : MonoBehaviour
         Destroy(przycisk);
         rigtbuton.SetActive(true);
         leftbuton.SetActive(true);
+        napisy.SetActive(true);
     }
 
     void FixedUpdate()
