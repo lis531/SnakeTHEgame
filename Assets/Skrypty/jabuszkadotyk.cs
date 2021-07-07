@@ -5,23 +5,15 @@ using UnityEngine.UI;
 using TMPro;
 
 public class jabuszkadotyk : MonoBehaviour
-{
+{  
     GameObject napisy;
     GameObject jabuszko;
     public BoxCollider2D pole;
-    private void Start()
-    {
-        napisy = GameObject.Find("Score");
 
-    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         RandomizePosition();
-        GameObject.Find("Score").GetComponent<Text>().text += 1;
-
     }
-
-
     private void RandomizePosition()
     {
         Bounds bounds = this.pole.bounds;
