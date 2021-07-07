@@ -11,13 +11,17 @@ public class score : MonoBehaviour
     {
         currentScore = 0;
     }
+    private void Start()
+    {
+        gameObject.tag = "scorus";
+    }
     private void HandleScore ()
     {
         scoreText.text = "Score:" + currentScore;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag = "score");
+        if (collision.gameObject.tag = "scorus");
         {
             currentScore = 1;
             currentScore ++;
