@@ -6,9 +6,11 @@ public class Snake : MonoBehaviour
     GameObject rigtbuton;
     GameObject leftbuton;
     GameObject przycisk;
+    GameObject napisy;
+    GameObject napisy2;
     public Vector2 _direction;
     public Button rozpoczecie;
-    float currentspeed = 5f;
+    float currentspeed = 2f;
     bool kobra = false;
     GameObject poczatek;
     private GameObject snake;
@@ -16,6 +18,10 @@ public class Snake : MonoBehaviour
     {
         rigtbuton = GameObject.Find("Button right");
         leftbuton = GameObject.Find("Button left");
+        napisy = GameObject.Find("Score");
+        napisy2 = GameObject.Find("After death");
+        napisy.SetActive(false);
+        napisy2.SetActive(false);
         rigtbuton.SetActive(false);
         leftbuton.SetActive(false);
         Button btn = rozpoczecie.GetComponent<Button>();
