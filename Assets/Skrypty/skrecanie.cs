@@ -8,55 +8,52 @@ public class skrecanie : MonoBehaviour
     GameObject dawnbuton;
     GameObject rigtbuton;
     GameObject leftbuton;
+    GameObject Snake;
     private Vector2 _direction = Vector2.right;
     void Awake()
     {
+        Snake = gameObject;
         apbuton = GameObject.Find("Button up");
         dawnbuton = GameObject.Find("Button down");
         rigtbuton = GameObject.Find("Button right");
         leftbuton = GameObject.Find("Button left");
         apbuton.SetActive(false);
         dawnbuton.SetActive(false);
-
-
     }
     public void TaskOnClickLeft()
     {
+        Snake.transform.rotation = Quaternion.Euler(0, 0, -90);
         leftbuton.SetActive(false);
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
         dawnbuton.SetActive(true);
-        _direction = Vector2.left;
+        Snake.GetComponent<Snake>()._direction = Vector2.left;
     }
     public void TaskOnClickRight()
     {
+        Snake.transform.rotation = Quaternion.Euler(0, 0, 90);
         leftbuton.SetActive(false);
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
         dawnbuton.SetActive(true);
-        _direction = Vector2.right;
+        Snake.GetComponent<Snake>()._direction = Vector2.right;
     }
     public void TaskOnClickUp()
     {
+        Snake.transform.rotation = Quaternion.Euler(0, 0, 0);
         apbuton.SetActive(false);
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
-        _direction = Vector2.up;
+        Snake.GetComponent<Snake>()._direction = Vector2.up;
     }
     public void TaskOnClickDown()
     {
+        Snake.transform.rotation = Quaternion.Euler(0, 0, 180);
         apbuton.SetActive(false);
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
-        _direction = Vector2.down;
+        Snake.GetComponent<Snake>()._direction = Vector2.down;
     }
-    //private void FixedUpdate()
-    //{
-       // this.transform.position = new Vector3(
-           // Mathf.Round(this.transform.position.x) + _direction.x,
-           // Mathf.Round(this.transform.position.y) + _direction.y,
-          //  0.0f);
-   // }
 }

@@ -7,9 +7,12 @@ public class jabuszkarespawn : MonoBehaviour
     public Button rozpoczecie;
     GameObject poczatek;
     GameObject przycisk;
+    GameObject jabuszko;
 
     private void Start()
     {
+        jabuszko = gameObject;
+        jabuszko.SetActive(false);
         Button btn = rozpoczecie.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
         przycisk = GameObject.Find("Button");
@@ -17,7 +20,8 @@ public class jabuszkarespawn : MonoBehaviour
 
     private void TaskOnClick()
     {
-    RandomizePosition();
+        jabuszko.SetActive(true);
+        RandomizePosition();
     }
 
     private void RandomizePosition()
