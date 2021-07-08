@@ -6,11 +6,11 @@ using TMPro;
 public class score : MonoBehaviour
 {
     public static int scoreAmount;
-    private Text scoreText;
+    private TMP_Text scoreText;
 
     void Start()
     {
-        scoreText = GetComponent<Text>();
+        scoreText = GetComponent<TMP_Text>();
         scoreAmount = 0;
     }
     void Update()
