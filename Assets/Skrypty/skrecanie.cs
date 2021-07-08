@@ -28,7 +28,6 @@ public class skrecanie : MonoBehaviour
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
         dawnbuton.SetActive(true);
-        gridPosition.x -= 1;
     }
     public void TaskOnClickRight()
     {
@@ -37,7 +36,6 @@ public class skrecanie : MonoBehaviour
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
         dawnbuton.SetActive(true);
-        gridPosition.x += 1;
     }
     public void TaskOnClickUp()
     {
@@ -46,7 +44,6 @@ public class skrecanie : MonoBehaviour
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
-        gridPosition.y += 1;
     }
     public void TaskOnClickDown()
     {
@@ -55,6 +52,5 @@ public class skrecanie : MonoBehaviour
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
-        gridPosition.y -= 1;
     }
 }
