@@ -4,10 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class skrecanie : MonoBehaviour
 {
-    private Vector2Int gridMoveDirection;
-    private Vector2Int gridPosition;
-    private float gridMoveTimer;
-    private float gridMoveTimerMax;
     GameObject apbuton;
     GameObject dawnbuton;
     GameObject rigtbuton;
@@ -16,10 +12,6 @@ public class skrecanie : MonoBehaviour
 
     void Awake()
     {
-        gridPosition = new Vector2Int(0, 0);
-        gridMoveTimerMax = 1f;
-        gridMoveTimer = gridMoveTimerMax;
-        gridMoveDirection = new Vector2Int(1, 0);
         Snake = gameObject;
         apbuton = GameObject.Find("Button up");
         dawnbuton = GameObject.Find("Button down");
@@ -64,14 +56,5 @@ public class skrecanie : MonoBehaviour
         leftbuton.SetActive(true);
         rigtbuton.SetActive(true);
         gridPosition.y -= 1;
-    }
-
-    private void Update() {
-        gridMoveTimer += Time.deltaTime;
-        if (gridMoveTimer >= gridMoveTimerMax) {
-            gridPosition += gridMoveDirection;
-            gridMoveTimer -= gridMoveTimerMax;
-        }
-        transform.position = new Vector3(gridPosition.x, gridPosition.y);
     }
 }
