@@ -1505,8 +1505,9 @@ GameObject:
   - component: {fileID: 1088147046}
   - component: {fileID: 1088147048}
   - component: {fileID: 1088147047}
+  - component: {fileID: 1088147049}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1551,10 +1552,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: '
+  m_text: 'SCORE:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3975ac66e812ed049b148a501a6410db, type: 2}
+  m_sharedMaterial: {fileID: -3120736431292623775, guid: 3975ac66e812ed049b148a501a6410db, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1628,6 +1629,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088147045}
   m_CullTransparentMesh: 1
+--- !u!114 &1088147049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088147045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297c615292e5337428669dad76104715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1107403057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,7 +2051,6 @@ GameObject:
   - component: {fileID: 1139889124}
   - component: {fileID: 1139889125}
   - component: {fileID: 1139889126}
-  - component: {fileID: 1139889127}
   m_Layer: 0
   m_Name: jabuszko
   m_TagString: scorus
@@ -2165,19 +2177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pole: {fileID: 595894717}
---- !u!114 &1139889127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139889121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 297c615292e5337428669dad76104715, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1088147047}
 --- !u!1 &1183728412
 GameObject:
   m_ObjectHideFlags: 0
