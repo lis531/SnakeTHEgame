@@ -9,6 +9,7 @@ public class skrecanie : MonoBehaviour
     GameObject rigtbuton;
     GameObject leftbuton;
     GameObject Snake;
+
     void Awake()
     {
         Snake = gameObject;
@@ -22,7 +23,7 @@ public class skrecanie : MonoBehaviour
     }
     public void TaskOnClickLeft()
     {
-        Snake.transform.rotation = Quaternion.Euler(0, 0, 90);
+        //Snake.transform.rotation = Quaternion.Euler(0, 0, 90);
         leftbuton.SetActive(false);
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
@@ -30,7 +31,7 @@ public class skrecanie : MonoBehaviour
     }
     public void TaskOnClickRight()
     {
-        Snake.transform.rotation = Quaternion.Euler(0, 0, -90);
+        //Snake.transform.rotation = Quaternion.Euler(0, 0, -90);
         leftbuton.SetActive(false);
         rigtbuton.SetActive(false);
         apbuton.SetActive(true);
@@ -38,7 +39,7 @@ public class skrecanie : MonoBehaviour
     }
     public void TaskOnClickUp()
     {
-        Snake.transform.rotation = Quaternion.Euler(0, 0, 0);
+        //Snake.transform.rotation = Quaternion.Euler(0, 0, 0);
         apbuton.SetActive(false);
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
@@ -46,7 +47,7 @@ public class skrecanie : MonoBehaviour
     }
     public void TaskOnClickDown()
     {
-        Snake.transform.rotation = Quaternion.Euler(0, 0, 180);
+        //Snake.transform.rotation = Quaternion.Euler(0, 0, 180);
         apbuton.SetActive(false);
         dawnbuton.SetActive(false);
         leftbuton.SetActive(true);
