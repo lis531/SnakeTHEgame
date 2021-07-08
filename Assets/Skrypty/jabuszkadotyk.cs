@@ -13,6 +13,7 @@ public class jabuszkadotyk : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         RandomizePosition();
+        score.scoreAmount += 1;
     }
     private void RandomizePosition()
     {

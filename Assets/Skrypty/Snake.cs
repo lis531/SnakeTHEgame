@@ -22,7 +22,7 @@ public class Snake : MonoBehaviour
         rigtbuton = GameObject.Find("Button right");
         leftbuton = GameObject.Find("Button left");
 
-        napisy = GameObject.Find("Score");
+        napisy = GameObject.Find("ScoreText");
         napisy1 = GameObject.Find("Restart");
         napisy2 = GameObject.Find("Continue");
         napisy3 = GameObject.Find("Menu");

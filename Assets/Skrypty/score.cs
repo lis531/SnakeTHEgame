@@ -5,22 +5,16 @@ using UnityEngine.UI;
 using TMPro;
 public class score : MonoBehaviour
 {
-    private int currentScore;
-    public TMP_Text scoreText;
-    private void Update()
+    public static int scoreAmount;
+    private Text scoreText;
+
+    void Start()
     {
-        currentScore = 0;
+        scoreText = GetComponent<Text>();
+        scoreAmount = 0;
     }
-    private void Start()
+    void Update()
     {
-        gameObject.tag = "scorus";
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "scorus");
-        {
-            currentScore++;
-            scoreText.text = "Score:" + currentScore;
-        }
+        scoreText.text = "Score:" + scoreAmount;
     }
 }
