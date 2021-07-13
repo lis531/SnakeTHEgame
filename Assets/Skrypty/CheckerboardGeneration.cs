@@ -7,23 +7,27 @@ using System;
 public class CheckerboardGeneration : MonoBehaviour
 {
     [Range(0.1f, 2f)]
-    public float rozmiarKafelka = 1;
+    public float rozmiarKafelka;
 
     public int szerokosc = 2;
     public int wysokosc = 1;
 
     public bool generujMape;
 
-    MeshRenderer meshRenderer;
-    MeshFilter meshFilter;
-
-    List<Vector3> verts =  new List<Vector3>();
-    List<int> tris =   new List<int>();
-    List<Vector3> normals= new List<Vector3>();
+    Vector3[] vertices;
+    List<Vector3> normals = new List<Vector3>();
     List<Vector2> uvs =    new List<Vector2>();
 
     Mesh mesh;
 
+
+    private void OnDrawGizmosSelected()
+    {
+        foreach (Vector3 vert in vertices)
+        {
+            Gizmos.DrawSphere(vert, 0.1f);
+        }
+    }
 
     void Update()
     {
@@ -31,69 +35,48 @@ public class CheckerboardGeneration : MonoBehaviour
         {
             generujMape = false;
 
-            //Refreshowanie componentow
-            if(gameObject.GetComponent<MeshRenderer>())
-            {
-                DestroyImmediate(gameObject.GetComponent<MeshRenderer>());
-                meshRenderer = gameObject.AddComponent<MeshRenderer>();
-            }
-            else
-                meshRenderer = gameObject.AddComponent<MeshRenderer>();
+            GetComponent<MeshFilter>().mesh = mesh = new Mesh();
+            mesh.name = "Procedural Grid";
 
-            //Refreshowanie componentow
-            if (gameObject.GetComponent<MeshFilter>())
+            vertices = new Vector3[(szerokosc + 1) * (wysokosc + 1)];
+            for (int i = 0, y = 0; y <= wysokosc; y++)
             {
-                DestroyImmediate(gameObject.GetComponent<MeshFilter>());
-                meshFilter = gameObject.AddComponent<MeshFilter>();
-            }
-            else
-                meshFilter = gameObject.AddComponent<MeshFilter>();
-
-            if(gameObject.GetComponent<Mesh>())
-            {
-                Destroy(GetComponent<Mesh>());
-                mesh = new Mesh();
-            }
-            else
-                mesh = new Mesh();
-
-            for (int x = 0; x < szerokosc; x++)
-            {
-                for (int y = 0; y < wysokosc; y++)
+                for (int x = 0; x <= szerokosc; x++, i++)
                 {
-
-                    //verts.Add(new Vector3(x * (rozmiarKafelka * 2), y * (rozmiarKafelka * 2)));
-                    //verts.Add(new Vector3(x * (rozmiarKafelka * 2) + rozmiarKafelka, y * (rozmiarKafelka * 2)));
-                    //verts.Add(new Vector3(x * (rozmiarKafelka * 2), y * (rozmiarKafelka * 2) + rozmiarKafelka));
-                    //verts.Add(new Vector3(x * (rozmiarKafelka * 2) + rozmiarKafelka, y * (rozmiarKafelka * 2) + rozmiarKafelka));
-
-                    verts.Add(new Vector3(x * (rozmiarKafelka * 2)                 , y * (rozmiarKafelka * 2)                 ));
-                    verts.Add(new Vector3(x * (rozmiarKafelka * 2)                 , y * (rozmiarKafelka * 2) + rozmiarKafelka));
-                    verts.Add(new Vector3(x * (rozmiarKafelka * 2) + rozmiarKafelka, y * (rozmiarKafelka * 2)                 ));
-                    verts.Add(new Vector3(x * (rozmiarKafelka * 2) + rozmiarKafelka, y * (rozmiarKafelka * 2) + rozmiarKafelka));
-
-
-                    tris.Add(x * y * 3);
-                    tris.Add(x * y * 3 + 1);
-                    tris.Add(x * y * 3 + 2);
-
-                    normals.Add(-Vector3.forward);
-                    normals.Add(-Vector3.forward);
-                    normals.Add(-Vector3.forward);
-                    normals.Add(-Vector3.forward);
-
-                    uvs.Add(new Vector2(0, 0));
-                    uvs.Add(new Vector2(0, 0));
-                    uvs.Add(new Vector2(0, 0));
-                    uvs.Add(new Vector2(0, 0));
+                    vertices[i] = new Vector3(x * rozmiarKafelka, y * rozmiarKafelka);
                 }
             }
-            mesh.vertices = verts.ToArray();
-            mesh.normals = normals.ToArray();
-            mesh.triangles = tris.ToArray();
-            mesh.uv = uvs.ToArray();
+            mesh.vertices = vertices;
 
-            meshFilter.mesh = mesh;
+            int[] triangles = new int[szerokosc * wysokosc * 6];
+
+            int[] subTriangles1 = new int[szerokosc * wysokosc * 3];
+            int[] subTriangles2 = new int[szerokosc * wysokosc * 3];
+
+            int n = 0;
+            for (int ti = 0, vi = 0, y = 0; y < wysokosc; y++, vi++)
+            {
+                for (int x = 0; x < szerokosc; x++, ti += 6, vi++)
+                {
+                    if(n % 2 == 0)
+                    {
+                        triangles[ti] = vi;
+                        triangles[ti + 3] = triangles[ti + 2] = vi + 1;
+                        triangles[ti + 4] = triangles[ti + 1] = vi + szerokosc + 1;
+                        triangles[ti + 5] = vi + szerokosc + 2;
+                    }
+                    else
+                    {
+                        triangles[ti] = vi;
+                        triangles[ti + 3] = triangles[ti + 2] = vi + 1;
+                        triangles[ti + 4] = triangles[ti + 1] = vi + szerokosc + 1;
+                        triangles[ti + 5] = vi + szerokosc + 2;
+                    }
+                    n++;
+                }
+            }
+
+            mesh.triangles = triangles;
         }
     }
 }
