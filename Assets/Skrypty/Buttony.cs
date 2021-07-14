@@ -24,7 +24,7 @@ public class Buttony : MonoBehaviour
         napisy2 = GameObject.Find("Continue");
         napisy3 = GameObject.Find("Menu");
 
-        napisy.SetActive(false);
+        napisy.SetActive(true);
         napisy1.SetActive(false);
         napisy2.SetActive(false);
         napisy3.SetActive(false);

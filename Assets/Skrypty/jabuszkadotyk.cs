@@ -6,14 +6,19 @@ using TMPro;
 
 public class jabuszkadotyk : MonoBehaviour
 {  
+    score amogus;
     GameObject napisy;
     GameObject jabuszko;
     public BoxCollider2D pole;
 
+    private void Start()
+    {
+        amogus = GameObject.Find("ScoreText").GetComponent<score>();
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         RandomizePosition();
-        score.scoreAmount += 1;
+        amogus.scoreAmount += 1;
     }
     private void RandomizePosition()
     {
