@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: PP
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 5062751353594676853}
   - {fileID: 8972475723189294348}
---- !u!114 &5062751353594676853
+  - {fileID: 7331296163530815810}
+  - {fileID: 6151462280211566429}
+--- !u!114 &6151462280211566429
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24,23 +25,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
-  m_Name: ChromaticAberration
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
   m_EditorClassIdentifier: 
   active: 1
   enabled:
     overrideState: 1
     value: 1
-  spectralLut:
-    overrideState: 0
-    value: {fileID: 0}
-    defaultState: 1
-  intensity:
+  focusDistance:
     overrideState: 1
-    value: 0.456
-  fastMode:
-    overrideState: 0
-    value: 0
+    value: 10
+  aperture:
+    overrideState: 1
+    value: 7.7
+  focalLength:
+    overrideState: 1
+    value: 90
+  kernelSize:
+    overrideState: 1
+    value: 1
+--- !u!114 &7331296163530815810
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  shutterAngle:
+    overrideState: 1
+    value: 270
+  sampleCount:
+    overrideState: 1
+    value: 10
 --- !u!114 &8972475723189294348
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -68,10 +93,10 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.461
+    value: 0.402
   smoothness:
     overrideState: 1
-    value: 0.2
+    value: 0.179
   roundness:
     overrideState: 0
     value: 1
