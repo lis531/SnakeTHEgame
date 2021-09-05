@@ -12,7 +12,7 @@ public class jabuszkadotyk : MonoBehaviour
 
     private void Start()
     {
-        amogus = GameObject.Find("Score/Text").GetComponent<score>();
+        amogus = GameObject.Find("Canvas/scoreText").GetComponent<score>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

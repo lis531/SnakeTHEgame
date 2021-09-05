@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Snake : MonoBehaviour
 {
@@ -25,11 +26,6 @@ public class Snake : MonoBehaviour
         DOWN,
         RIGHT
     };
-
-    public Snake(bool spawnedCollider)
-    {
-        SpawnedCollider = spawnedCollider;
-    }
 
     Turn QueuedTurn;
     bool TurnIsQueued = false;
@@ -106,6 +102,7 @@ public class Snake : MonoBehaviour
 
     void TurnSnake()
     {
+        transform.position = tiles[Mathf.RoundToInt(transform.position.x + width / 2), Mathf.RoundToInt(transform.position.y + height / 2)];
         switch (QueuedTurn)
         {
             case Turn.UP:
@@ -142,6 +139,13 @@ public class Snake : MonoBehaviour
         }
     }
 
+    IEnumerator ColliderSpawnCooldown()
+    {
+        SpawnedCollider = true;
+        yield return new WaitForSecondsRealtime(0.2f);
+        SpawnedCollider = false;
+    }
+
     //Sprawdzanie czy waz jest na srodku tile'a.
     //Jesli jest - skreci i sie "wysrodkuje"
     // na srodek tile'a na ktorym sie znajduje
@@ -150,10 +154,12 @@ public class Snake : MonoBehaviour
         Vector2 nearest = tiles[Mathf.Clamp(Mathf.RoundToInt(transform.position.x + width / 2), 0, width), Mathf.Clamp(Mathf.RoundToInt(transform.position.y + height / 2), 0, height)];
         if (Vector2.Distance(transform.position, nearest) < centerMargin)
         {
-            if (TurnIsQueued)
-            {
-                transform.position = tiles[Mathf.RoundToInt(transform.position.x + width / 2), Mathf.RoundToInt(transform.position.y + height / 2)];
+            if (TurnIsQueued) 
                 TurnSnake();
+            if (!SpawnedCollider)
+            {
+                trskrypt.AddCollider();
+                StartCoroutine(ColliderSpawnCooldown());
             }
         }
     }

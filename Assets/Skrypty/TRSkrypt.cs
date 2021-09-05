@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class TRSkrypt : MonoBehaviour
 {
-    private GameObject ColliderPrefab;
-    private TrailRenderer tr;
+    public GameObject ColliderPrefab;
+    TrailRenderer tr;
 
     void Awake()
     {

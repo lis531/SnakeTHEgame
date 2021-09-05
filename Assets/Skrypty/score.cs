@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class score : MonoBehaviour
 {
     public GameObject skoreText;
     public int scoreAmount;
-    private Text scoreText;
+    Text scoreText;
+
     public int highscore;
-    private Text highscoreText;
+    Text highscoreText;
     public GameObject HighScore;
     
     void Awake()
@@ -19,6 +19,7 @@ public class score : MonoBehaviour
         highscore = PlayerPrefs.GetInt("HightScore");
         highscoreText.text = "HighScore:" + highscore;
     }
+
     void FixedUpdate()
     {
         scoreText.text = "" + scoreAmount;
