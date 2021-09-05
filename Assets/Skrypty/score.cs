@@ -17,7 +17,7 @@ public class score : MonoBehaviour
         scoreText = skoreText.GetComponent<Text>();
         scoreAmount = 0;
         highscore = PlayerPrefs.GetInt("HightScore");
-        highscoreText.text = "HIGH SCORE: " + highscore;
+        highscoreText.text = "HighScore:" + highscore;
     }
     void FixedUpdate()
     {

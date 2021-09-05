@@ -3,33 +3,38 @@ using UnityEngine.UI;
 
 public class Buttony : MonoBehaviour
 {
-    GameObject rigtbuton;
-    GameObject leftbuton;
+    GameObject rightbutton;
+    GameObject leftbutton;
     GameObject przycisk;
     GameObject napisy;
     GameObject napisy1;
     GameObject napisy2;
     GameObject napisy3;
+    GameObject napisy4;
+    GameObject napisy5;
     public Button rozpoczecie;
     GameObject poczatek;
     private GameObject snake;
 
     private void Start()
     {
-        rigtbuton = GameObject.Find("Button right");
-        leftbuton = GameObject.Find("Button left");
+        rightbutton = GameObject.Find("Button right");
+        leftbutton = GameObject.Find("Button left");
 
         napisy = GameObject.Find("Score");
         napisy1 = GameObject.Find("Restart");
         napisy2 = GameObject.Find("Continue");
         napisy3 = GameObject.Find("Menu");
-
+        napisy4 = GameObject.Find("HightScore");
+        napisy5 = GameObject.Find("Score");
         napisy.SetActive(true);
         napisy1.SetActive(false);
         napisy2.SetActive(false);
         napisy3.SetActive(false);
-        rigtbuton.SetActive(false);
-        leftbuton.SetActive(false);
+        napisy4.SetActive(false);
+        napisy5.SetActive(false);
+        rightbutton.SetActive(false);
+        leftbutton.SetActive(false);
 
         Button btn = rozpoczecie.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
@@ -38,8 +43,10 @@ public class Buttony : MonoBehaviour
     private void TaskOnClick()
     {
         Destroy(przycisk);
-        rigtbuton.SetActive(true);
-        leftbuton.SetActive(true);
+        rightbutton.SetActive(true);
+        leftbutton.SetActive(true);
         napisy.SetActive(true);
+        napisy4.SetActive(true);
+        napisy5.SetActive(true);
     }
 }
