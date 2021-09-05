@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class jabuszkadotyk : MonoBehaviour
 {  
-    score amogus;
+    score ScoreText;
     GameObject napisy;
     GameObject jabuszko;
     public BoxCollider2D pole;
 
     private void Start()
     {
-        amogus = GameObject.Find("Canvas/scoreText").GetComponent<score>();
+        ScoreText = GameObject.Find("Canvas/Score").GetComponent<score>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         RandomizePosition();
-        amogus.scoreAmount += 1;
+        ScoreText.scoreAmount += 1;
         GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 0.6f;
     }
     private void RandomizePosition()

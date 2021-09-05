@@ -5,6 +5,27 @@ using UnityEngine;
 public class DeathScript : MonoBehaviour
 {
     Camera cam;
+    GameObject MenuButton;
+    GameObject RestartButton;
+    GameObject ContinueButton;
+    GameObject LeftButton;
+    GameObject RightButton;
+    GameObject UpButton;
+    GameObject DownButton;
+
+    private void Start()
+    {
+        MenuButton = GameObject.Find("Menu");
+        RestartButton = GameObject.Find("Restart");
+        ContinueButton = GameObject.Find("Continue");
+        LeftButton = GameObject.Find("Button left");
+        RightButton = GameObject.Find("Button right");
+        UpButton = GameObject.Find("Button up");
+        DownButton = GameObject.Find("Button down");
+        MenuButton.SetActive(false);
+        RestartButton.SetActive(false);
+        ContinueButton.SetActive(false);
+    }
 
     private void Awake()
     {
@@ -19,6 +40,13 @@ public class DeathScript : MonoBehaviour
         if(!onScreen)
         {
             Destroy(gameObject);
+            MenuButton.SetActive(true);
+            RestartButton.SetActive(true);
+            ContinueButton.SetActive(true);
+            LeftButton.SetActive(false);
+            RightButton.SetActive(false);
+            UpButton.SetActive(false);
+            DownButton.SetActive(false);
         }
     }
 }
