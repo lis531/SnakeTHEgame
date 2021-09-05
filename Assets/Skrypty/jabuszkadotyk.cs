@@ -19,6 +19,7 @@ public class jabuszkadotyk : MonoBehaviour
     {
         RandomizePosition();
         amogus.scoreAmount += 1;
+        GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 0.6f;
     }
     private void RandomizePosition()
     {

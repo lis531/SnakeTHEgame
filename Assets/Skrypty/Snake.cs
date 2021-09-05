@@ -11,6 +11,8 @@ public class Snake : MonoBehaviour
     //minimum 0.001f, maximum 0.5f
     static float centerMargin = 0.2f;
 
+    TRSkrypt trskrypt;
+
     Vector2[,] tiles;
 
     float currentspeed = 5f;
@@ -26,6 +28,7 @@ public class Snake : MonoBehaviour
 
     Turn QueuedTurn;
     bool TurnIsQueued = false;
+    bool SpawnedCollider = false;
 
     GameObject apbuton;
     GameObject dawnbuton;
@@ -35,6 +38,8 @@ public class Snake : MonoBehaviour
 
     void Awake()
     {
+        trskrypt = gameObject.GetComponent<TRSkrypt>();
+
         apbuton = GameObject.Find("Button up");
         dawnbuton = GameObject.Find("Button down");
         rigtbuton = GameObject.Find("Button right");
@@ -139,11 +144,10 @@ public class Snake : MonoBehaviour
     // na srodek tile'a na ktorym sie znajduje
     private void Update()
     {
-        if(TurnIsQueued)
+        Vector2 nearest = tiles[Mathf.Clamp(Mathf.RoundToInt(transform.position.x + width / 2), 0, width), Mathf.Clamp(Mathf.RoundToInt(transform.position.y + height / 2), 0, height)];
+        if (Vector2.Distance(transform.position, nearest) < centerMargin)
         {
-            Vector2 nearest = tiles[Mathf.Clamp(Mathf.RoundToInt(transform.position.x + width / 2), 0, width), Mathf.Clamp(Mathf.RoundToInt(transform.position.y + height / 2), 0, height)];
-
-            if (Vector2.Distance(transform.position, nearest) < centerMargin)
+            if (TurnIsQueued)
             {
                 transform.position = tiles[Mathf.RoundToInt(transform.position.x + width / 2), Mathf.RoundToInt(transform.position.y + height / 2)];
                 TurnSnake();
