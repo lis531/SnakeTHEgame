@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 public class score : MonoBehaviour
 {
     public GameObject skoreText;
     public int scoreAmount;
-    private TMP_Text scoreText;
+    private Text scoreText;
     public int highscore;
-    private TMP_Text highscoreText;
+    private Text highscoreText;
     public GameObject HighScore;
     
     void Awake()
     {
-        highscoreText = HighScore.GetComponent<TMP_Text>();
-        scoreText = skoreText.GetComponent<TMP_Text>();
+        highscoreText = HighScore.GetComponent<Text>();
+        scoreText = skoreText.GetComponent<Text>();
         scoreAmount = 0;
         highscore = PlayerPrefs.GetInt("HightScore");
-        highscoreText.text = "HighScore:" + highscore;
+        highscoreText.text = "HIGH SCORE: " + highscore;
     }
     void FixedUpdate()
     {

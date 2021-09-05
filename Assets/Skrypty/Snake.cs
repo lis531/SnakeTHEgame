@@ -26,6 +26,11 @@ public class Snake : MonoBehaviour
         RIGHT
     };
 
+    public Snake(bool spawnedCollider)
+    {
+        SpawnedCollider = spawnedCollider;
+    }
+
     Turn QueuedTurn;
     bool TurnIsQueued = false;
     bool SpawnedCollider = false;
@@ -57,7 +62,6 @@ public class Snake : MonoBehaviour
             }
         }
 
-        napisy.SetActive(false);
         apbuton.SetActive(false);
         dawnbuton.SetActive(false);
         rigtbuton.SetActive(false);
@@ -125,7 +129,6 @@ public class Snake : MonoBehaviour
         kobra = true;
         rigtbuton.SetActive(true);
         leftbuton.SetActive(true);
-        napisy.SetActive(true);
     }
 
     //Poruszanie sie snejka
