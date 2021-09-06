@@ -1359,7 +1359,6 @@ GameObject:
   - component: {fileID: 819700263}
   - component: {fileID: 819700265}
   - component: {fileID: 819700266}
-  - component: {fileID: 819700262}
   - component: {fileID: 819700267}
   m_Layer: 0
   m_Name: Snake
@@ -1368,24 +1367,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &819700262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819700261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9c1fb255a41891449e38b104a585981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 24
-  height: 12
-  apbuton: {fileID: 237821443}
-  dawnbuton: {fileID: 2012395496}
-  rigtbuton: {fileID: 1107403057}
-  leftbuton: {fileID: 1801266335}
 --- !u!114 &819700263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,10 +1381,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 25
   height: 13
-  apbuton: {fileID: 0}
-  dawnbuton: {fileID: 0}
-  rigtbuton: {fileID: 0}
-  leftbuton: {fileID: 0}
 --- !u!4 &819700264
 Transform:
   m_ObjectHideFlags: 0

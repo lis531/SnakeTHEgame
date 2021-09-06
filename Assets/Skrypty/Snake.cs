@@ -34,12 +34,12 @@ public class Snake : MonoBehaviour
     GameObject MenuButton;
     GameObject RestartButton;
     GameObject ContinueButton;
-    public GameObject apbuton;
-    public GameObject dawnbuton;
-    public GameObject rigtbuton;
-    public GameObject leftbuton;
+    /*public*/ GameObject UpButton;
+    /*public*/ GameObject DownButton;
+    /*public*/ GameObject RightButton;
+    /*public*/ GameObject LeftButton;
 
-    void Awake()
+    void Start()
     {
         trskrypt = gameObject.GetComponent<TRSkrypt>();
 
@@ -49,10 +49,16 @@ public class Snake : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         InvokeRepeating("CheckVisibility", 0, 0.3f);
 
-        apbuton.SetActive(false);
-        dawnbuton.SetActive(false);
-        rigtbuton.SetActive(false);
-        leftbuton.SetActive(false);
+        UpButton =  GameObject.Find("Canvas/Button up");
+        DownButton =  GameObject.Find("Canvas/Button down");
+        RightButton =  GameObject.Find("Canvas/Button right");
+        LeftButton = GameObject.Find("Canvas/Button left");
+
+        UpButton.SetActive(false);
+        DownButton.SetActive(false);
+        RightButton.SetActive(false);
+        LeftButton.SetActive(false);
+
         MenuButton.SetActive(false);
         RestartButton.SetActive(false);
         ContinueButton.SetActive(false);
@@ -71,10 +77,10 @@ public class Snake : MonoBehaviour
 
     void ChangeButtonVisibility()
     {
-        leftbuton.SetActive(!leftbuton.activeInHierarchy);
-        rigtbuton.SetActive(!rigtbuton.activeInHierarchy);
-        apbuton.SetActive(!apbuton.activeInHierarchy);
-        dawnbuton.SetActive(!dawnbuton.activeInHierarchy);
+        LeftButton.SetActive(!LeftButton.activeInHierarchy);
+        RightButton.SetActive(!RightButton.activeInHierarchy);
+        UpButton.SetActive(!UpButton.activeInHierarchy);
+        DownButton.SetActive(!DownButton.activeInHierarchy);
     }
 
     public void TaskOnClickLeft()
@@ -129,8 +135,8 @@ public class Snake : MonoBehaviour
     public void TaskOnClick()
     {
         kobra = true;
-        rigtbuton.SetActive(true);
-        leftbuton.SetActive(true);
+        RightButton.SetActive(true);
+        LeftButton.SetActive(true);
     }
 
     //Poruszanie sie snejka
@@ -178,10 +184,10 @@ public class Snake : MonoBehaviour
             MenuButton.SetActive(true);
             RestartButton.SetActive(true);
             ContinueButton.SetActive(true);
-            leftbuton.SetActive(false);
-            rigtbuton.SetActive(false);
-            apbuton.SetActive(false);
-            dawnbuton.SetActive(false);
+            LeftButton.SetActive(false);
+            RightButton.SetActive(false);
+            UpButton.SetActive(false);
+            DownButton.SetActive(false);
         }
     }
 }
