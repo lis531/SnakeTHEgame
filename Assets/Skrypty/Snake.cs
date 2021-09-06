@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class Snake : MonoBehaviour
@@ -35,23 +34,15 @@ public class Snake : MonoBehaviour
     GameObject MenuButton;
     GameObject RestartButton;
     GameObject ContinueButton;
-    GameObject apbuton;
-    GameObject dawnbuton;
-    GameObject rigtbuton;
-    GameObject leftbuton;
-    GameObject Start;
-    GameObject Snake1;
+    public GameObject apbuton;
+    public GameObject dawnbuton;
+    public GameObject rigtbuton;
+    public GameObject leftbuton;
 
     void Awake()
     {
         trskrypt = gameObject.GetComponent<TRSkrypt>();
 
-        Snake1 = GameObject.Find("Canvas/Snake");
-        Start = GameObject.Find("Canvas/Start");
-        apbuton = GameObject.Find("Canvas/Button up");
-        dawnbuton = GameObject.Find("Canvas/Button down");
-        rigtbuton = GameObject.Find("Canvas/Button right");
-        leftbuton = GameObject.Find("Canvas/Button left");
         MenuButton = GameObject.Find("Canvas/Menu");
         RestartButton = GameObject.Find("Canvas/Restart");
         ContinueButton = GameObject.Find("Canvas/Continue");
