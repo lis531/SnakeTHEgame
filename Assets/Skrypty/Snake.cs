@@ -31,21 +31,40 @@ public class Snake : MonoBehaviour
     bool TurnIsQueued = false;
     bool SpawnedCollider = false;
 
+    Camera cam;
+    GameObject MenuButton;
+    GameObject RestartButton;
+    GameObject ContinueButton;
     GameObject apbuton;
     GameObject dawnbuton;
     GameObject rigtbuton;
     GameObject leftbuton;
-    GameObject napisy;
+    GameObject Start;
+    GameObject Snake1;
 
     void Awake()
     {
         trskrypt = gameObject.GetComponent<TRSkrypt>();
 
-        apbuton = GameObject.Find("Button up");
-        dawnbuton = GameObject.Find("Button down");
-        rigtbuton = GameObject.Find("Button right");
-        leftbuton = GameObject.Find("Button left");
-        napisy = GameObject.Find("ScoreText");
+        Snake1 = GameObject.Find("Canvas/Snake");
+        Start = GameObject.Find("Canvas/Start");
+        apbuton = GameObject.Find("Canvas/Button up");
+        dawnbuton = GameObject.Find("Canvas/Button down");
+        rigtbuton = GameObject.Find("Canvas/Button right");
+        leftbuton = GameObject.Find("Canvas/Button left");
+        MenuButton = GameObject.Find("Canvas/Menu");
+        RestartButton = GameObject.Find("Canvas/Restart");
+        ContinueButton = GameObject.Find("Canvas/Continue");
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        InvokeRepeating("CheckVisibility", 0, 0.3f);
+
+        apbuton.SetActive(false);
+        dawnbuton.SetActive(false);
+        rigtbuton.SetActive(false);
+        leftbuton.SetActive(false);
+        MenuButton.SetActive(false);
+        RestartButton.SetActive(false);
+        ContinueButton.SetActive(false);
 
         tiles = new Vector2[width, height];
 
@@ -57,11 +76,6 @@ public class Snake : MonoBehaviour
                 tiles[x, y] = new Vector2(x - (width / 2), y - (height / 2));
             }
         }
-
-        apbuton.SetActive(false);
-        dawnbuton.SetActive(false);
-        rigtbuton.SetActive(false);
-        leftbuton.SetActive(false);
     }
 
     void ChangeButtonVisibility()
@@ -161,6 +175,22 @@ public class Snake : MonoBehaviour
                 trskrypt.AddCollider();
                 StartCoroutine(ColliderSpawnCooldown());
             }
+        }
+    }
+    void CheckVisibility()
+    {
+        Vector3 screenPoint = cam.WorldToViewportPoint(transform.position);
+        bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+        if (!onScreen)
+        {
+            Destroy(gameObject);
+            MenuButton.SetActive(true);
+            RestartButton.SetActive(true);
+            ContinueButton.SetActive(true);
+            leftbuton.SetActive(false);
+            rigtbuton.SetActive(false);
+            apbuton.SetActive(false);
+            dawnbuton.SetActive(false);
         }
     }
 }
