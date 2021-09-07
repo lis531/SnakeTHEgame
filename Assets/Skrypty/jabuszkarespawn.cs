@@ -5,8 +5,6 @@ public class jabuszkarespawn : MonoBehaviour
 {
     public BoxCollider2D pole;
     public Button rozpoczecie;
-    GameObject poczatek;
-    GameObject przycisk;
     GameObject jabuszko;
 
     private void Start()
@@ -15,7 +13,6 @@ public class jabuszkarespawn : MonoBehaviour
         jabuszko.SetActive(false);
         Button btn = rozpoczecie.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
-        przycisk = GameObject.Find("Button");
     }
 
     private void TaskOnClick()

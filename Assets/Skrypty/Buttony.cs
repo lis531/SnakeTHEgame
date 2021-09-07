@@ -11,8 +11,6 @@ public class Buttony : MonoBehaviour
     GameObject napisy2;
     GameObject napisy3;
     public Button rozpoczecie;
-    GameObject poczatek;
-    private GameObject snake;
 
     private void Start()
     {

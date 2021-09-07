@@ -262,11 +262,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.7765689, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 0, g: 0.26886988, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.15566039, g: 0.3826336, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.1991122, b: 0.735849, a: 1}
+    m_SelectedColor: {r: 0.13679248, g: 0.36869898, b: 1, a: 1}
+    m_DisabledColor: {r: 0, g: 0.13784693, b: 0.509434, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1407,7 +1407,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1886,10 +1886,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.7765689, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.5424528, g: 0.8977248, b: 1, a: 1}
-    m_PressedColor: {r: 0, g: 0.6812431, b: 0.8773585, a: 1}
-    m_SelectedColor: {r: 0, g: 0.6812431, b: 0.8773585, a: 1}
+    m_NormalColor: {r: 0, g: 0.65926754, b: 0.8490566, a: 1}
+    m_HighlightedColor: {r: 0.2783019, g: 0.83962256, b: 1, a: 1}
+    m_PressedColor: {r: 0.0033374948, g: 0.5503573, b: 0.7075472, a: 1}
+    m_SelectedColor: {r: 0.13679248, g: 0.80731946, b: 1, a: 1}
     m_DisabledColor: {r: 0, g: 0.77647066, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2447,7 +2447,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.7
+  m_Time: 1.1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -2473,13 +2473,13 @@ TrailRenderer:
         inWeight: 1
         outWeight: 1
       - serializedVersion: 3
-        time: 0.9362488
+        time: 0.90927124
         value: 0
-        inSlope: -11.166941
-        outSlope: -11.166941
+        inSlope: -31.858778
+        outSlope: -31.858778
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.17343184
+        inWeight: 0.5092967
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -2606,7 +2606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1510725333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2624,7 +2624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 430, y: 300}
+  m_AnchoredPosition: {x: 360, y: 300}
   m_SizeDelta: {x: 360, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510725334
@@ -3213,7 +3213,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: RESTART
 --- !u!222 &1989274483
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3432,7 +3432,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 367cae19328696c4289013bb9db444ca, type: 3}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

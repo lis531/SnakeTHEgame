@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class score : MonoBehaviour
 {
@@ -19,12 +20,20 @@ public class score : MonoBehaviour
         highscore = PlayerPrefs.GetInt("HIGHSCORE");
         highscoreText.text = "HIGHSCORE: " + highscore;
     }
-
+    public void RestartGame()
+    {
+        PlayerPrefs.SetInt("SCORE", scoreAmount);
+        PlayerPrefs.SetInt("RESTARTONSTART", 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     void FixedUpdate()
     {
         scoreText.text = "SCORE: " + scoreAmount;
-        if(scoreAmount > highscore) highscore = scoreAmount;
-        highscoreText.text = "HIGHSCORE:" + highscore;
-        PlayerPrefs.SetInt("HIGHSCORE", highscore);
+        if (scoreAmount > highscore)
+        {
+            highscore = scoreAmount;
+            highscoreText.text = "HIGHSCORE:" + highscore;
+            PlayerPrefs.SetInt("HIGHSCORE", highscore);
+        }
     }
 }

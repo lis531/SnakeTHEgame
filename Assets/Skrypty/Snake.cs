@@ -34,10 +34,11 @@ public class Snake : MonoBehaviour
     GameObject MenuButton;
     GameObject RestartButton;
     GameObject ContinueButton;
-    /*public*/ GameObject UpButton;
-    /*public*/ GameObject DownButton;
-    /*public*/ GameObject RightButton;
-    /*public*/ GameObject LeftButton;
+    GameObject UpButton;
+    GameObject DownButton;
+    GameObject RightButton;
+    GameObject LeftButton;
+    GameObject snejkus;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class Snake : MonoBehaviour
         MenuButton = GameObject.Find("Canvas/Menu");
         RestartButton = GameObject.Find("Canvas/Restart");
         ContinueButton = GameObject.Find("Canvas/Continue");
+        snejkus = GameObject.Find("Snake");
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         InvokeRepeating("CheckVisibility", 0, 0.3f);
 
@@ -167,7 +169,7 @@ public class Snake : MonoBehaviour
         {
             if (TurnIsQueued) 
                 TurnSnake();
-            if (!SpawnedCollider)
+            if (!SpawnedCollider && kobra)
             {
                 trskrypt.AddCollider();
                 StartCoroutine(ColliderSpawnCooldown());
@@ -180,7 +182,7 @@ public class Snake : MonoBehaviour
         bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
         if (!onScreen)
         {
-            Destroy(gameObject);
+            snejkus.SetActive(false);
             MenuButton.SetActive(true);
             RestartButton.SetActive(true);
             ContinueButton.SetActive(true);

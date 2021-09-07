@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class jabuszkadotyk : MonoBehaviour
 {  
     score ScoreText;
-    GameObject napisy;
-    GameObject jabuszko;
     public BoxCollider2D pole;
 
     private void Start()
@@ -18,7 +13,7 @@ public class jabuszkadotyk : MonoBehaviour
     {
         RandomizePosition();
         ScoreText.scoreAmount += 1;
-        GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 0.6f;
+        GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 0.4f;
     }
     private void RandomizePosition()
     {
