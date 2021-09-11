@@ -17,9 +17,11 @@ public class TRSkrypt : MonoBehaviour
     GameObject RightButton;
     GameObject LeftButton;
 
+
     void Awake()
     {
         scoreScript = GameObject.Find("Canvas/Score").GetComponent<score>();
+        scoreScript.gameObject.SetActive(false);
         tr = GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>();
         snejk = GameObject.Find("Canvas/Snake");
         UpButton = GameObject.Find("Canvas/Button up");
@@ -33,7 +35,7 @@ public class TRSkrypt : MonoBehaviour
     }
     IEnumerator ActivateOverTime(GameObject col)
     {
-        yield return new WaitForSecondsRealtime(0.55f);
+        yield return new WaitForSeconds(0.5f);
         col.SetActive(true);
     }
     public void AddCollider()

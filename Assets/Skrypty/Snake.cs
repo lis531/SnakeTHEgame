@@ -9,7 +9,7 @@ public class Snake : MonoBehaviour
 
     //centerMargin okresla przy jakim dystansie do srodka najblizszego tile'a (maximum) moze skrecic.
     //minimum 0.001f, maximum 0.5f
-    static float centerMargin = 0.2f;
+    static float centerMargin = 0.01f;
 
     TRSkrypt trskrypt;
 
@@ -155,7 +155,7 @@ public class Snake : MonoBehaviour
     IEnumerator ColliderSpawnCooldown()
     {
         SpawnedCollider = true;
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSeconds(0.2f);
         SpawnedCollider = false;
     }
 
