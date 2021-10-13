@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class jabuszkax2 : MonoBehaviour
 {
     score ScoreText;
     public BoxCollider2D pole;
-    //GameObject jabuszkox2;
+    GameObject jabuszkox2;
     bool amogusTimer = false;
     IEnumerator Amogus()
     {
@@ -16,7 +15,7 @@ public class jabuszkax2 : MonoBehaviour
     }
     private void Start()
     {
-        //jabuszkox2 = GameObject.Find("jabuszkozlote");
+        jabuszkox2 = GameObject.Find("jabuszkozlote");
         ScoreText = GameObject.Find("Canvas/Score").GetComponent<score>();
         StartCoroutine(Amogus());
     }
@@ -24,7 +23,7 @@ public class jabuszkax2 : MonoBehaviour
     {
         GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 1.0f;
         ScoreText.scoreAmount += 3;
-        //jabuszkox2.SetActive(false);
+        jabuszkox2.SetActive(false);
 
         if(amogusTimer)
             RandomizePosition();

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public GameObject scoreDisplay;
-
+    GameObject Snik;
+    GameObject Przycisk;
     void Start()
     {
-
+        Snik = GameObject.Find("Snake");
+        Przycisk = GameObject.Find("Canvas/Continue");
+        transform.position = new Vector3(1, 2, 3);
     }
+    
 }
