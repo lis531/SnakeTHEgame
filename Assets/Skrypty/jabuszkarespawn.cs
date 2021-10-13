@@ -6,6 +6,7 @@ public class jabuszkarespawn : MonoBehaviour
     public BoxCollider2D pole;
     public Button rozpoczecie;
     GameObject jabuszko;
+    GameObject jabuszkozlote;
 
     private void Start()
     {

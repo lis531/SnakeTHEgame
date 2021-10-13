@@ -7,5 +7,4 @@ public class restart : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
-
 }

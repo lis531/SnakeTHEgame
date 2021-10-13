@@ -13,7 +13,7 @@ public class jabuszkadotyk : MonoBehaviour
     {
         RandomizePosition();
         ScoreText.scoreAmount += 1;
-        GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 0.4f;
+        GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 0.5f;
     }
     private void RandomizePosition()
     {
