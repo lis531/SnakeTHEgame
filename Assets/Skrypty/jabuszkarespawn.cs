@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class jabuszkarespawn : MonoBehaviour
 {
-    Score ScoreText;
+    score ScoreText;
     public BoxCollider2D pole;
     IEnumerator Amogus()
     {
@@ -12,7 +12,7 @@ public class jabuszkarespawn : MonoBehaviour
     }
     private void Start()
     {
-        ScoreText = GameObject.Find("Canvas/Score").GetComponent<Score>();
+        ScoreText = GameObject.Find("Canvas/Score").GetComponent<score>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

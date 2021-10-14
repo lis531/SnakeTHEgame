@@ -5,7 +5,7 @@ public class TRSkrypt : MonoBehaviour
 {
     public GameObject ColliderPrefab;
     TrailRenderer tr;
-    Score scoreScript;
+    score scoreScript;
     GameObject snejk;
     GameObject MenuButton;
     GameObject RestartButton;
@@ -18,7 +18,7 @@ public class TRSkrypt : MonoBehaviour
 
     void Awake()
     {
-        scoreScript = GameObject.Find("Canvas/Score").GetComponent<Score>();
+        scoreScript = GameObject.Find("Canvas/Score").GetComponent<score>();
         scoreScript.gameObject.SetActive(false);
         tr = GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>();
         snejk = GameObject.Find("Canvas/Snake");

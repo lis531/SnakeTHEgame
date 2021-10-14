@@ -1359,7 +1359,6 @@ GameObject:
   - component: {fileID: 806633738}
   - component: {fileID: 806633737}
   - component: {fileID: 806633736}
-  - component: {fileID: 806633735}
   m_Layer: 0
   m_Name: jabuszkozlote
   m_TagString: Untagged
@@ -1367,20 +1366,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &806633735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806633734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f093a7f5d31f2584f81e1a01accfa62a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pole: {fileID: 595894717}
-  rozpoczecie: {fileID: 1113200225}
 --- !u!61 &806633736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2241,7 +2226,6 @@ GameObject:
   - component: {fileID: 1139889122}
   - component: {fileID: 1139889124}
   - component: {fileID: 1139889125}
-  - component: {fileID: 1139889126}
   m_Layer: 0
   m_Name: jabuszko
   m_TagString: scorus
@@ -2328,7 +2312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pole: {fileID: 595894717}
-  rozpoczecie: {fileID: 1113200225}
 --- !u!61 &1139889125
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2355,19 +2338,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &1139889126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139889121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d28ea9f92cc8e24896783f562248136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pole: {fileID: 595894717}
 --- !u!1 &1199020918
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,7 +2952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297c615292e5337428669dad76104715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 876480179}
+  Scorus: {fileID: 0}
   scoreAmount: 0
   HighScore: {fileID: 2070415434}
   highscore: 0
