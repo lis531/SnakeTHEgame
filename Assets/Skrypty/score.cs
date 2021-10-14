@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class score : MonoBehaviour
 {
-    public GameObject Scorus;
+    public GameObject Score;
     public int scoreAmount;
     Text scoreText;
 
@@ -15,7 +15,7 @@ public class score : MonoBehaviour
     void Awake()
     {
         highscoreText = HighScore.GetComponent<Text>();
-        scoreText = Scorus.GetComponent<Text>();
+        scoreText = Score.GetComponent<Text>();
         scoreAmount = 0;
         highscore = PlayerPrefs.GetInt("HIGHSCORE");
         highscoreText.text = "HIGHSCORE: " + highscore;

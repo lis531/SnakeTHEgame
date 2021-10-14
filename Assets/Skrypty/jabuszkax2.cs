@@ -3,24 +3,25 @@ using UnityEngine;
 
 public class jabuszkax2 : MonoBehaviour
 {
-    score ScoreText;
+    score Score;
     public BoxCollider2D pole;
-    IEnumerator Amogus()
+    IEnumerator Amugus()
     {
-        yield return new WaitForSeconds(20.0f);
+        yield return new WaitForSeconds(15.0f);
         RandomizePosition();
     }
     void Start()
     {
-        ScoreText = GameObject.Find("Canvas/Score").GetComponent<score>();
+
+        Score = GameObject.Find("Canvas/Score").GetComponent<score>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         transform.position = new Vector3(100, 100, 100);
         GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 1.0f;
-        ScoreText.scoreAmount += 3;
+        Score.scoreAmount += 3;
 
-        StartCoroutine(Amogus());
+        StartCoroutine(Amugus());
     }
     public void RandomizePosition()
     {
