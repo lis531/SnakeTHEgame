@@ -5,28 +5,22 @@ public class jabuszkax2 : MonoBehaviour
 {
     score ScoreText;
     public BoxCollider2D pole;
-    GameObject jabuszkox2;
-    bool amogusTimer = false;
     IEnumerator Amogus()
     {
-        amogusTimer = false;
-        yield return new WaitForSeconds(10.0f);
-        amogusTimer = true;
+        yield return new WaitForSeconds(20.0f);
+        RandomizePosition();
     }
-    private void Start()
+    void Start()
     {
-        jabuszkox2 = GameObject.Find("jabuszkozlote");
         ScoreText = GameObject.Find("Canvas/Score").GetComponent<score>();
-        StartCoroutine(Amogus());
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
+        transform.position = new Vector3(100, 100, 100);
         GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 1.0f;
         ScoreText.scoreAmount += 3;
-        jabuszkox2.SetActive(false);
 
-        if(amogusTimer)
-            RandomizePosition();
+        StartCoroutine(Amogus());
     }
     public void RandomizePosition()
     {

@@ -1,42 +1,34 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class jabuszkarespawn : MonoBehaviour
 {
+    Score ScoreText;
     public BoxCollider2D pole;
-    public Button rozpoczecie;
-    GameObject jabuszko;
-    GameObject jabuszkozlote;
-
-    private void Start()
+    IEnumerator Amogus()
     {
-        jabuszko = gameObject;
-        jabuszko.SetActive(false);
-        Button btn = rozpoczecie.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
-    }
-
-    private void TaskOnClick()
-    {
-        jabuszko.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
         RandomizePosition();
     }
-
-    private void RandomizePosition()
+    private void Start()
     {
-        Bounds bounds = pole.bounds;
+        ScoreText = GameObject.Find("Canvas/Score").GetComponent<Score>();
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        transform.position = new Vector3(100, 100, 100);
+        GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 1.0f;
+        ScoreText.scoreAmount += 3;
+
+        StartCoroutine(Amogus());
+    }
+    public void RandomizePosition()
+    {
+        Bounds bounds = this.pole.bounds;
 
         float x = Random.Range(bounds.min.x, bounds.max.x);
         float y = Random.Range(bounds.min.y, bounds.max.y);
 
-        transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Gracz")
-        {
-            RandomizePosition();
-        }
+        this.transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
     }
 }
