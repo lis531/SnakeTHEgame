@@ -16,7 +16,6 @@ public class Buttony : MonoBehaviour
     {
         rightbutton = GameObject.Find("Button right");
         leftbutton = GameObject.Find("Button left");
-
         napisy = GameObject.Find("Score");
         napisy1 = GameObject.Find("Restart");
         napisy2 = GameObject.Find("Continue");

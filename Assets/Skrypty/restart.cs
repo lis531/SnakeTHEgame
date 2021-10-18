@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class restart : MonoBehaviour
+public class Restart : MonoBehaviour
 {
     public void Amangas()
     {

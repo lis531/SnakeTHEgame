@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         Snik = GameObject.Find("Snake");
         Przycisk = GameObject.Find("Canvas/Continue");
-        transform.position = new Vector3(1, 2, 3);
+        transform.position = new Vector3(x: 1, y: 2, z: 3);
     }
     
 }
