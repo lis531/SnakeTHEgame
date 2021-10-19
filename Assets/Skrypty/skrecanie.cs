@@ -1,5 +1,5 @@
 using UnityEngine;
-public class skrecanie : MonoBehaviour
+public class Skrecanie : MonoBehaviour
 {
     GameObject apbuton;
     GameObject dawnbuton;

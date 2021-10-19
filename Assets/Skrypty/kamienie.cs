@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-public class kamienie : MonoBehaviour
+public class Kamienie : MonoBehaviour
 {
     public BoxCollider2D pole;
     public float czas1;
