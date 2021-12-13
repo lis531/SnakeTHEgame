@@ -18,7 +18,7 @@ public class Jabuszkarespawn : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         transform.position = new Vector3(100, 100, 100);
-        GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 1.0f;
+        GameObject.Find("Snake/glowa").GetComponent<TrailRenderer>().time += 0.5f;
         Score.scoreAmount += 1;
         StartCoroutine(Amogus());
     }

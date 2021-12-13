@@ -859,10 +859,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pole: {fileID: 595894717}
-  czas1: 1
-  czas2: 2
+  czas1: 0
+  czas2: 0
   czas3: 3
-  czas4: 4
+  czas4: 0
 --- !u!212 &297699695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1070,10 +1070,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pole: {fileID: 595894717}
-  czas1: 1
+  czas1: 0
   czas2: 2
-  czas3: 3
-  czas4: 4
+  czas3: 0
+  czas4: 0
 --- !u!212 &512052999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1498,9 +1498,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pole: {fileID: 595894717}
-  czas1: 1
-  czas2: 2
-  czas3: 3
+  czas1: 0
+  czas2: 0
+  czas3: 0
   czas4: 4
 --- !u!212 &715017171
 SpriteRenderer:
@@ -2697,9 +2697,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pole: {fileID: 595894717}
   czas1: 1
-  czas2: 2
-  czas3: 3
-  czas4: 4
+  czas2: 0
+  czas3: 0
+  czas4: 0
 --- !u!212 &1362821672
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3593,10 +3593,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pole: {fileID: 595894717}
-  czas1: 1
-  czas2: 2
-  czas3: 3
-  czas4: 4
+  czas1: 0
+  czas2: 0
+  czas3: 0
+  czas4: 0
 --- !u!212 &1901159420
 SpriteRenderer:
   m_ObjectHideFlags: 0
