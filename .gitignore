@@ -28,6 +28,7 @@ sysinfo.txt
 *.pidb
 .DS_Store
 
+UserSettings/Layouts/*.dwlt
 
 *.log
 
@@ -42,3 +43,4 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+*.dwlt
