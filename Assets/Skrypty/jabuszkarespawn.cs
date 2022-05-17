@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Jabuszkarespawn : MonoBehaviour
+public class jabuszkarespawn : MonoBehaviour
 {
     score Score;
     public BoxCollider2D pole;
